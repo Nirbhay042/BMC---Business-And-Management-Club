@@ -1,0 +1,238 @@
+/**
+ * Velt Studio - Global Styles
+ * Main stylesheet containing CSS variables, resets, and base styles
+ */
+
+/* ========================================
+   CSS Custom Properties (Design Tokens)
+   ======================================== */
+:root {
+  /* Colors */
+  --bg: #090B14;
+  --bg2: #0F1220;
+  --bg3: #161926;
+  --accent: #C8FF57;
+  --accent2: #7B61FF;
+  --text: #F0EEE6;
+  --muted: #7A7E8F;
+  --border: rgba(240, 238, 230, 0.1);
+
+  /* Typography */
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --display: 'Bebas Neue', sans-serif;
+
+  /* Spacing */
+  --nav-padding: 24px;
+  --nav-padding-scrolled: 16px;
+  --section-padding: 120px;
+  --container-padding: 48px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.4s ease;
+  --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ========================================
+   Typography Utilities
+   ======================================== */
+.font-display {
+  font-family: var(--display);
+}
+
+.font-serif {
+  font-family: var(--serif);
+}
+
+.font-sans {
+  font-family: var(--sans);
+}
+
+/* ========================================
+   Section Common Styles
+   ======================================== */
+section {
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  cursor: none;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #d4ff70;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 3px;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+  display: inline-block;
+}
+
+.btn-ghost:hover {
+  border-color: var(--text);
+}
+
+.btn-dark {
+  background: var(--bg);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 20px 44px;
+  border: none;
+  cursor: none;
+  white-space: nowrap;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-dark:hover {
+  background: #1a1d2e;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Fade In Reveal Animation
+   ======================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--transition-smooth),
+              transform 0.8s var(--transition-smooth);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   Keyframe Animations
+   ======================================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   Responsive Breakpoints
+   ======================================== */
+@media (max-width: 900px) {
+  :root {
+    --section-padding: 80px;
+    --container-padding: 24px;
+  }
+
+  section {
+    padding: var(--section-padding) var(--container-padding);
+  }
+}

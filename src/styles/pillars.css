@@ -1,0 +1,135 @@
+/**
+ * Velt Studio - Pillars Section Styles
+ * Three core values/forces of the company
+ */
+
+/* ========================================
+   Pillars Section
+   ======================================== */
+.pillars {
+  /* Inherits section padding from global */
+}
+
+/* ========================================
+   Pillars Grid
+   ======================================== */
+.pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 72px;
+}
+
+/* ========================================
+   Individual Pillar Card
+   ======================================== */
+.pillar {
+  background: var(--bg2);
+  padding: 56px 40px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-medium);
+}
+
+.pillar:hover {
+  background: var(--bg3);
+}
+
+/* ========================================
+   Pillar Background Number
+   ======================================== */
+.pillar__number {
+  font-family: var(--display);
+  font-size: 120px;
+  line-height: 1;
+  color: rgba(240, 238, 230, 0.04);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  pointer-events: none;
+  transition: color var(--transition-medium);
+}
+
+.pillar:hover .pillar__number {
+  color: rgba(200, 255, 87, 0.07);
+}
+
+/* ========================================
+   Pillar Icon
+   ======================================== */
+.pillar__icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: 20px;
+  transition: border-color var(--transition-medium),
+              background var(--transition-medium);
+}
+
+.pillar:hover .pillar__icon {
+  border-color: var(--accent);
+  background: rgba(200, 255, 87, 0.08);
+}
+
+/* ========================================
+   Pillar Title
+   ======================================== */
+.pillar h3 {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   Pillar Description
+   ======================================== */
+.pillar p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* ========================================
+   Pillar Caveat/Note
+   ======================================== */
+.pillar__caveat {
+  margin-top: 28px;
+  padding: 16px;
+  border-left: 2px solid rgba(200, 255, 87, 0.3);
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ========================================
+   Pillars Header
+   ======================================== */
+.pillars__header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+/* ========================================
+   Mobile Pillars Styles
+   ======================================== */
+@media (max-width: 900px) {
+  .pillars__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar {
+    padding: 40px 28px;
+  }
+
+  .pillar__number {
+    font-size: 80px;
+  }
+}

@@ -1,0 +1,159 @@
+/**
+ * Velt Studio - Hero Section Styles
+ * Full-screen hero with animated text and background gradients
+ */
+
+/* ========================================
+   Hero Section Container
+   ======================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--container-padding) 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========================================
+   Hero Background
+   ======================================== */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 70% 30%,
+      rgba(123, 97, 255, 0.12) 0%,
+      transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 80%,
+      rgba(200, 255, 87, 0.06) 0%,
+      transparent 50%);
+  pointer-events: none;
+}
+
+/* ========================================
+   Hero Label
+   ======================================== */
+.hero__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.3s forwards;
+}
+
+/* ========================================
+   Hero Title
+   ======================================== */
+.hero__title {
+  font-family: var(--display);
+  font-size: clamp(72px, 10vw, 148px);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero__title .line span {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero__title .line:nth-child(1) span {
+  animation-delay: 0.4s;
+}
+
+.hero__title .line:nth-child(2) span {
+  animation-delay: 0.55s;
+  color: var(--accent);
+}
+
+.hero__title .line:nth-child(3) span {
+  animation-delay: 0.7s;
+}
+
+/* ========================================
+   Hero Bottom Section
+   ======================================== */
+.hero__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 52px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1s forwards;
+}
+
+.hero__sub {
+  max-width: 380px;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.hero__sub em {
+  color: var(--text);
+  font-style: normal;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ========================================
+   Hero Scroll Indicator
+   ======================================== */
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  right: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeUp 0.8s 1.3s forwards;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 1.8s infinite;
+}
+
+.scroll-text {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  writing-mode: vertical-rl;
+}
+
+/* ========================================
+   Mobile Hero Styles
+   ======================================== */
+@media (max-width: 900px) {
+  .hero {
+    padding: 0 var(--container-padding) 60px;
+  }
+
+  .hero__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}

@@ -1,0 +1,65 @@
+/**
+ * Velt Studio - Marquee Styles
+ * Infinite scrolling client/partner showcase
+ */
+
+/* ========================================
+   Marquee Section
+   ======================================== */
+.marquee-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* ========================================
+   Marquee Label
+   ======================================== */
+.marquee-label {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* ========================================
+   Marquee Track
+   ======================================== */
+.marquee-track {
+  display: flex;
+  gap: 64px;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+/* ========================================
+   Marquee Items
+   ======================================== */
+.marquee-item {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  text-transform: uppercase;
+  flex-shrink: 0;
+  transition: color var(--transition-medium);
+}
+
+.marquee-item:hover {
+  color: var(--accent);
+}
+
+.marquee-dot {
+  color: var(--accent);
+  margin: 0 -16px;
+}
+
+/* ========================================
+   Marquee Container
+   ======================================== */
+.marquee-container {
+  overflow: hidden;
+}

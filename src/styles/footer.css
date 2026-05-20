@@ -1,0 +1,125 @@
+/**
+ * Velt Studio - Footer Styles
+ * Site footer with navigation and social links
+ */
+
+/* ========================================
+   Footer Container
+   ======================================== */
+.footer {
+  background: var(--bg2);
+  padding: 80px var(--container-padding) 40px;
+  border-top: 1px solid var(--border);
+}
+
+/* ========================================
+   Footer Top Section
+   ======================================== */
+.footer__top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 64px;
+  margin-bottom: 72px;
+}
+
+/* ========================================
+   Footer Brand Section
+   ======================================== */
+.footer__brand .navbar__logo {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.footer__brand p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+/* ========================================
+   Footer Column
+   ======================================== */
+.footer__col h4 {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.footer__col ul {
+  list-style: none;
+}
+
+.footer__col ul li {
+  margin-bottom: 12px;
+}
+
+.footer__col ul a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer__col ul a:hover {
+  color: var(--text);
+}
+
+/* ========================================
+   Footer Bottom Section
+   ======================================== */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer__bottom p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ========================================
+   Social Links
+   ======================================== */
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color var(--transition-fast);
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
+/* ========================================
+   Mobile Footer Styles
+   ======================================== */
+@media (max-width: 900px) {
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
