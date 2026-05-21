@@ -2,9 +2,6 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-
-  base: '/BMC---Buisness-And-Management-Club/',
-
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
@@ -20,5 +17,4 @@ export default defineConfig({
     open: true,
     port: 3000
   }
-
 });
