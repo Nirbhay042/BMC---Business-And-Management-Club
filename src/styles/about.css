@@ -1,63 +1,177 @@
 /**
- * Velt Studio - About/Intro Section Styles
- * Company introduction with statistics grid
+ * 
+ * Company introduction with cinematic looping video
  */
 
 /* ========================================
    Intro Section Layout
    ======================================== */
+
 .intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 80px;
+
   align-items: center;
+
   border-top: 1px solid var(--border);
+
+  padding-top: 120px;
 }
 
 /* ========================================
    Intro Text Content
    ======================================== */
+
 .intro__text {
   max-width: 100%;
 }
 
 .intro__text p {
   color: var(--muted);
+
   font-size: 18px;
+
   font-weight: 300;
+
   line-height: 1.75;
+
   margin-bottom: 20px;
 }
 
 .intro__text p em {
   color: var(--text);
+
   font-style: normal;
+}
+
+/* ========================================
+   Intro Video Section
+   ======================================== */
+
+.intro__video {
+  position: relative;
+
+  width: 100%;
+  height: 680px;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  isolation: isolate;
+}
+
+/* ========================================
+   Video Element
+   ======================================== */
+
+.intro__video-element {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    brightness(1.9)
+    contrast(1.05)
+    saturate(1.1);
+
+  mix-blend-mode: screen;
+
+  opacity: 0.82;
+}
+
+/* ========================================
+   Cinematic Overlay
+   ======================================== */
+
+.intro__video::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(5, 8, 22, 1) 0%,
+      rgba(5, 8, 22, 0.4) 18%,
+      rgba(5, 8, 22, 0) 35%
+    ),
+
+    linear-gradient(
+      to top,
+      rgba(5, 8, 22, 0.7),
+      rgba(5, 8, 22, 0.05)
+    );
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   Optional Floating Glow
+   ======================================== */
+
+.intro__video::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  background: rgba(199, 255, 63, 0.12);
+
+  filter: blur(120px);
+
+  top: -80px;
+  right: -80px;
+
+  z-index: 2;
+
+  pointer-events: none;
 }
 
 /* ========================================
    Statistics Grid
    ======================================== */
+
 .intro__stats {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 1px;
+
   background: var(--border);
+
   border: 1px solid var(--border);
 }
 
 /* ========================================
    Individual Stat Item
    ======================================== */
+
 .stat {
   background: var(--bg2);
+
   padding: 36px 32px;
 }
 
 .stat__number {
   font-family: var(--display);
+
   font-size: 72px;
+
   line-height: 1;
+
   letter-spacing: 0.02em;
+
   color: var(--text);
 }
 
@@ -67,20 +181,35 @@
 
 .stat__label {
   font-size: 13px;
+
   color: var(--muted);
+
   margin-top: 8px;
+
   letter-spacing: 0.06em;
 }
 
 /* ========================================
    Mobile About Styles
    ======================================== */
+
 @media (max-width: 900px) {
+
   .intro {
     grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding-top: 80px;
   }
 
-  .intro__stats {
-    margin-top: 40px;
+  .intro__video {
+    height: 420px;
+  }
+
+  .intro__text p {
+    font-size: 16px;
+
+    line-height: 1.7;
   }
 }

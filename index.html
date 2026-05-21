@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Velt Studio — Digital Product Agency. We blend engineering precision, bold design, and startup velocity to ship digital products that move markets."
+      content="We are the buisness and management club of the IIITDM Jablapur"
     />
     <meta name="theme-color" content="#090B14" />
 
@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="src/styles/services.css" />
     <link rel="stylesheet" href="src/styles/cta.css" />
     <link rel="stylesheet" href="src/styles/footer.css" />
+    <link rel="stylesheet" href="src/styles/gallery.css" />
   </head>
   <body>
     <!-- Custom Cursor Elements -->
@@ -41,20 +42,26 @@
 
     <!-- Navigation -->
     <nav id="nav" class="navbar" role="navigation" aria-label="Main navigation">
-      <a href="#" class="navbar__logo">BMC<span></span></a>
+      <a href="#" class="navbar__logo">
+  <span class="logo-main">BMC</span>
+  <span class="logo-sub">THE BUSINESS AND MANAGEMENT CLUB</span>
+</a>
       <ul class="navbar__links">
         <li><a href="#services" class="navbar__link">Services</a></li>
-        <li><a href="#work" class="navbar__link">Work</a></li>
+        <li><a href="#work" class="navbar__link">Insights</a></li>
         <li><a href="#about" class="navbar__link">About</a></li>
         <li><a href="#contact" class="navbar__link">Contact</a></li>
       </ul>
-      <!-- <button class="navbar__cta">Book a Call</button> -->
+      <!-- <button class="navbar__cta"></button> -->
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" aria-label="Introduction">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <p class="hero__label">The Buisness And Management Club</p>
+      <div class="hero__bg" aria-hidden="true">
+  <video autoplay muted loop playsinline class="hero__video">
+    <source src="/src/assets/video.mp4" type="video/mp4" />
+  </video>
+</div>
       <h1 class="hero__title">
         <span class="line"><span>OUR</span></span>
         <span class="line"><span>MISSION</span></span>
@@ -148,54 +155,69 @@
     </div>
 
     <!-- About/Intro Section -->
-    <section class="intro" id="about" aria-label="About Velt Studio">
-      <div class="intro__text reveal">
-        <p class="section-label">Who We Are</p>
-        <h2 class="section-title">
-          BMC<br /><em>Buisness And Management Club</em>
-        </h2>
-        <p>
-          We are the Buisness and Management Club of IIITDM Jabalpur, a student
-          driven community dedicated to building
-          <em>leadership, </em><em>communication</em> and
-          <em>entrepreneurial thinking</em> among our students.
-        </p>
-        <p>
-          Our club bridges the gap between classroom learning and real-world
-          professional experience through <em>workshops,</em> <em>expert talks, </em><em>case studies,</em>
-          and <em>competitions.</em> We aim to create a space
-          where <em>ideas grow,</em> <em>skills sharpen</em> and students gain the confidence to
-         <em>solve problems,</em> <em>lead teams</em> and <em>make and impact.</em>
-        </p>
-        <a href="#" class="btn-ghost" style="margin-top: 12px">Our Story →</a>
-      </div>
-      <!-- <div class="intro__stats reveal">
-        <div class="stat">
-          <div class="stat__number">48<span>+</span></div>
-          <div class="stat__label">Products Shipped</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number">$2<span>B</span></div>
-          <div class="stat__label">Client Value Created</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number">5<span>★</span></div>
-          <div class="stat__label">Clutch Rating</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number">6<span>yr</span></div>
-          <div class="stat__label">In Operation</div>
-        </div>
-      </div> -->
-    </section>
+<section class="intro" id="about" aria-label="About Velt Studio">
 
-    <!-- Work/Projects Section -->
+  <!-- LEFT SIDE -->
+  <div class="intro__text reveal">
+
+    <p class="section-label">Who We Are</p>
+
+    <h2 class="section-title">
+      BMC<br /><em>Business And Management Club</em>
+    </h2>
+
+    <p>
+      We are the Business and Management Club of IIITDM Jabalpur, a student
+      driven community dedicated to building
+      <em>leadership, </em><em>communication</em> and
+      <em>entrepreneurial thinking</em> among our students.
+    </p>
+
+    <p>
+      Our club bridges the gap between classroom learning and real-world
+      professional experience through <em>workshops,</em>
+      <em>expert talks, </em><em>case studies,</em>
+      and <em>competitions.</em>
+
+      We aim to create a space where
+      <em>ideas grow,</em>
+      <em>skills sharpen</em>
+      and students gain the confidence to
+      <em>solve problems,</em>
+      <em>lead teams</em>
+      and <em>make an impact.</em>
+    </p>
+
+    <a href="#" class="btn-ghost" style="margin-top: 12px">
+      Our Story →
+    </a>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="intro__video reveal">
+
+    <video autoplay muted loop playsinline class="intro__video-element">
+      <source src="/src/assets/video2.mp4" type="video/mp4" />
+    </video>
+
+  </div>
+
+</section>
+
+    <!--Insights Section -->
     <section class="work" id="work" aria-label="Selected Work">
+        <div class="work__bg">
+  <video autoplay muted loop playsinline class="work__bg-video">
+    <source src="/src/assets/video3.mp4" type="video/mp4" />
+  </video>
+</div>
       <div class="work__header reveal">
         <div>
           <p class="section-label">Insights</p>
           <h2 class="section-title">True<br /><em>Insights</em></h2>
-        <!-- </div>
+        </div>
+        <!-- <div>
         <a href="#" class="btn-ghost">View </a>
       </div> -->
       <div class="work__grid">
@@ -209,11 +231,7 @@
                 data analysis.
             </p>
           </div>
-          <!-- <div class="work__tags">
-            <span class="tag">Product Design</span>
-            <span class="tag">Engineering</span>
-            <span class="tag">Strategy</span>
-          </div> -->
+          
           <div class="work__arrow" aria-hidden="true">↗</div>
         </article>
 
@@ -227,10 +245,7 @@ engagement metrics to optimize business
 strategies.
             </p>
           </div>
-          <!-- <div class="work__tags">
-            <span class="tag"></span>
-            <span class="tag"></span>
-          </div> -->
+          
           <div class="work__arrow" aria-hidden="true">↗</div>
         </article>
 
@@ -243,15 +258,13 @@ strategies.
 make data- driven business decisions.
             </p>
           </div>
-          <!-- <div class="work__tags">
-            <span class="tag"></span>
-            <span class="tag"></span>
-          </div> -->
+          
           <div class="work__arrow" aria-hidden="true">↗</div>
         </article>
 
         
       </div>
+      
     </section>
 
     <!-- Pillars Section -->
@@ -303,50 +316,24 @@ make data- driven business decisions.
   </div>
 </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services" aria-label="Our Services">
-      <p class="section-label reveal">What We Offer</p>
-      <h2 class="section-title reveal">End-to-end<br /><em>capability.</em></h2>
-      <div class="services__wrapper">
-        <article class="service reveal">
-          <div class="service__number">01 — Consulting</div>
-          <h3>Product Strategy</h3>
-          <p>
-            Market research, roadmap architecture, and product-market fit
-            validation. We help you build the right thing before you build the
-            thing right.
-          </p>
-          <a href="#" class="service__link">Explore <span>↗</span></a>
-        </article>
-        <article class="service reveal">
-          <div class="service__number">02 — Design</div>
-          <h3>UX & Visual Design</h3>
-          <p>
-            User research, interaction design, and visual systems that convert.
-            From wireframe to polished UI, every touchpoint is intentional.
-          </p>
-          <a href="#" class="service__link">Explore <span>↗</span></a>
-        </article>
-        <article class="service reveal">
-          <div class="service__number">03 — Engineering</div>
-          <h3>Full-Stack Development</h3>
-          <p>
-            React, Next.js, Node, mobile, APIs. We write clean, maintainable
-            code that your future team will thank us for.
-          </p>
-          <a href="#" class="service__link">Explore <span>↗</span></a>
-        </article>
-        <article class="service reveal">
-          <div class="service__number">04 — Growth</div>
-          <h3>Launch & Scale</h3>
-          <p>
-            Analytics instrumentation, A/B testing, and growth loops. We don't
-            just ship — we stick around to make it work.
-          </p>
-          <a href="#" class="service__link">Explore <span>↗</span></a>
-        </article>
-      </div>
-    </section>
+    <!-- Gallery Section -->
+<section class="gallery" id="gallery" aria-label="Club Gallery">
+
+  <div class="gallery__header reveal">
+
+    <p class="section-label">
+      Gallery
+    </p>
+
+    <h2 class="section-title">
+      Club<br /><em>Moments</em>
+    </h2>
+
+  </div>
+
+  <div class="gallery__track" id="gallery-track"></div>
+
+</section>
 
     <!-- CTA Banner -->
     <div class="cta-banner" id="contact">
@@ -358,46 +345,34 @@ make data- driven business decisions.
     <footer class="footer" role="contentinfo">
       <div class="footer__top">
         <div class="footer__brand">
-          <a href="#" class="navbar__logo">VELT<span>.</span></a>
+          <a href="#" class="navbar__logo">BMC<span></span></a>
           <p>
-            We blend innovation, engineering, and design to transform your
-            business ideas into leading-edge digital products.
+            THE BUISNESS AND MANAGEMENT CLUB
           </p>
         </div>
         <div class="footer__col">
           <h4>Company</h4>
           <ul>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Our Values</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Acheivements</a></li>
             <li><a href="#">Careers</a></li>
-            <li><a href="#">Press</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#">Case Studies</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Playbook</a></li>
+            <li><a href="#">Media</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <h4>Contact</h4>
           <ul>
             <li><a href="#">Get In Touch</a></li>
-            <li><a href="mailto:hello@velt.studio">hello@velt.studio</a></li>
-            <li><a href="#">New York, NY</a></li>
+            <li><a href="mailto:bmc@iiitdmj.ac.in">bmc@iiitdmj.ac.in</a></li>
+            <li><a href="#">Jabalpur, Madhya Pradesh</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2020–2026 Velt Studio, Inc. — All rights reserved.</p>
+        <p>© BMC IIITDM Jabalpur — All rights reserved.</p>
         <div class="social-links">
-          <a href="#" aria-label="Twitter">Twitter</a>
           <a href="#" aria-label="LinkedIn">LinkedIn</a>
           <a href="#" aria-label="Instagram">Instagram</a>
-          <a href="#" aria-label="Dribbble">Dribbble</a>
         </div>
       </div>
     </footer>

@@ -1,15 +1,65 @@
 /**
- * Velt Studio - Work/Projects Section Styles
- * Portfolio showcase with project cards
+ * 
+ * Insights Section
  */
 
 /* ========================================
    Work Section
    ======================================== */
+
+/* ========================================
+   Work Section Background Video
+   ======================================== */
+
 .work {
-  background: var(--bg2);
+    background: var(--bg2);
+  position: relative;
+
+  overflow: hidden;
+
+  isolation: isolate;
 }
 
+.work__bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  overflow: hidden;
+}
+
+.work__bg-video {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    brightness(1)
+    contrast(1.15)
+    saturate(1.1);
+
+  opacity: 0.85;
+}
+.work::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 8, 22, 0.92),
+      rgba(5, 8, 22, 0.75)
+    );
+
+  z-index: -1;
+}
 /* ========================================
    Work Section Header
    ======================================== */
@@ -38,7 +88,13 @@
   align-items: center;
   gap: 40px;
   padding: 36px 40px;
-  background: var(--bg3);
+  .work-item {
+  background: rgba(255,255,255,0.03);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.06);
+}
   border: 1px solid var(--border);
   cursor: none;
   transition: background var(--transition-medium),
