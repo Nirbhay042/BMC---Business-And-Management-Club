@@ -135,7 +135,7 @@ No manual editing required.
 
 ----
 
-# 📱 Responsive Design
+# Responsive Design
 
 The website is optimized for:
 
@@ -145,7 +145,7 @@ The website is optimized for:
 
 ---
 
-# 🧩 Dynamic Systems
+# Dynamic Systems
 
 The project includes:
 
