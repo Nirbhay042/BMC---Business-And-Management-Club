@@ -1,5 +1,5 @@
 /**
- * Velt Studio - Custom Cursor Module
+ * BMC - Business and Management Club- Custom Cursor Module
  * Handles the custom cursor with dot and ring elements
  */
 

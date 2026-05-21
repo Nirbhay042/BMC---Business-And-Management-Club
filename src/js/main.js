@@ -1,5 +1,5 @@
 /**
- * Velt Studio - Main Application Entry Point
+ * BMC - Business and Management Club- Main Application Entry Point
  * Initializes all modules and handles application lifecycle
  */
 
@@ -7,6 +7,7 @@ import { CustomCursor } from './cursor.js';
 import { ScrollController } from './scroll.js';
 import { RevealAnimation } from './reveal.js';
 import "./gallery.js"
+import "./upcomingevents.js";
 /**
  * Main Application Class
  * Orchestrates all modules and handles initialization

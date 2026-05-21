@@ -1,5 +1,5 @@
 /**
- * Velt Studio - Scroll Module
+ * BMC - Business and Management Club
  * Handles navigation scroll effects and smooth scrolling
  */
 

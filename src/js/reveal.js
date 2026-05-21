@@ -1,5 +1,5 @@
 /**
- * Velt Studio - Reveal Animation Module
+ * BMC - Business and Management Club
  * Handles scroll-triggered fade-in animations using Intersection Observer
  */
 

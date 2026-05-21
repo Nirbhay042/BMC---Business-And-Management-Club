@@ -1,35 +1,68 @@
-window.addEventListener("DOMContentLoaded", () => {
+/**
+ * Gallery Module - Auto-loads images from src/assets/photos/
+ * Handles dynamic image loading using Vite's import.meta.glob
+ */
 
-  const galleryTrack = document.getElementById("gallery-track");
-
-  if (!galleryTrack) {
-    console.error("Gallery track not found");
-    return;
-  }
-
-  const images = import.meta.glob(
-    "../assets/photos/*.{png,jpg,jpeg,webp,JPG,JPEG,PNG}",
-    {
-      eager: true,
+const Gallery = (() => {
+  // Initialize gallery when DOM is ready
+  const init = () => {
+    const galleryTrack = document.getElementById("gallery-track");
+    
+    if (!galleryTrack) {
+      console.warn("Gallery track element not found");
+      return;
     }
-  );
 
-  console.log("Loaded Images:", images);
+    // Use import.meta.glob with relative path pattern
+    // The path is relative to the project root (where vite.config.js is)
+    const images = import.meta.glob(
+      "../assets/photos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}",
+      { 
+        eager: true,
+        import: 'default'
+      }
+    );
 
-  Object.values(images).forEach((image) => {
+    // Get array of image URLs
+    const imageUrls = Object.values(images);
 
-    const item = document.createElement("div");
+    // Safety check: only proceed if images exist
+    if (imageUrls.length === 0) {
+      console.info("No images found in src/assets/photos/");
+      return;
+    }
 
-    item.classList.add("gallery__item");
+    // Clear any existing content first
+    galleryTrack.innerHTML = '';
 
-    const img = document.createElement("img");
+    // Create gallery items for each image
+    imageUrls.forEach((imageUrl) => {
+      if (!imageUrl) return; // Skip invalid entries
 
-    img.src = image.default;
+      const item = document.createElement("div");
+      item.classList.add("gallery__item");
 
-    item.appendChild(img);
+      const img = document.createElement("img");
+      img.src = imageUrl;
+      img.loading = "lazy"; // Improve performance
+      img.alt = "Gallery image";
 
-    galleryTrack.appendChild(item);
+      item.appendChild(img);
+      galleryTrack.appendChild(item);
+    });
 
-  });
+    console.log(`Gallery loaded with ${imageUrls.length} images`);
+  };
 
-});
+  // Public API
+  return {
+    init
+  };
+})();
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', Gallery.init);
+} else {
+  Gallery.init();
+}

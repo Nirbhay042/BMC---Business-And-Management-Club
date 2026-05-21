@@ -1,149 +1,240 @@
-
 /* ========================================
-   Navigation Container
+   BMC - Business and Management Club Premium White Glass Navbar
    ======================================== */
+
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--nav-padding) var(--container-padding);
-  background: transparent;
-  transition: background var(--transition-slow),
-              padding var(--transition-slow);
-}
 
-.navbar.scrolled {
-  background: rgba(9, 11, 20, 0.92);
-  backdrop-filter: blur(12px);
-  padding: var(--nav-padding-scrolled) var(--container-padding);
-  border-bottom: 1px solid var(--border);
+  top: 22px ;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 80px);
+
+  max-width: 1850px;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 12px 26px;
+
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.24);
+
+  transition: all 0.35s ease;
 }
 
 /* ========================================
-   Navigation Logo
+   Scroll Effect
    ======================================== */
-/* .navbar__logo {
-  font-family: var(--display);
-  font-size: 28px;
-  letter-spacing: 0.08em;
-  color: var(--text);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-} */
-.navbar__logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 
-  text-decoration: none;
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.16);
 
-  line-height: 1;
-
-  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
+/* ========================================
+   Logo Container
+   ======================================== */
+
+.navbar__logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  text-decoration: none;
+}
+
+/* ========================================
+   Logo Image
+   ======================================== */
+
+.navbar__logo-image {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  padding: 6px;
+
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.16);
+
+  transition: transform 0.4s ease;
+}
+
+.navbar__logo:hover .navbar__logo-image {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+/* ========================================
+   Logo Text Wrapper
+   ======================================== */
+
+.navbar__logo-text {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+/* ========================================
+   BMC Main Text
+   ======================================== */
+
 .logo-main {
-  font-family: var(--display);
+  font-family: "Monument Extended", sans-serif;
 
-  font-size: 42px;
+  font-size: 40px;
 
-  font-weight: 800;
+  font-weight: 600;
 
-  letter-spacing: 0.06em;
+  line-height: 0.85;
 
   color: white;
 
-  line-height: 0.9;
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.08);
 }
+
+/* ========================================
+   Subtitle
+   ======================================== */
 
 .logo-sub {
   margin-top: 8px;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
 
   text-transform: uppercase;
 
-  color: var(--accent);
+  color: #d6ff57;
 
   white-space: nowrap;
-
-  opacity: 1;
-}
-
-
-
-.navbar__logo:hover {
-  color: var(--accent);
 }
 
 /* ========================================
-   Navigation Links
+   Nav Links
    ======================================== */
+
 .navbar__links {
   display: flex;
-  gap: 36px;
+
+  align-items: center;
+
+  gap: 44px;
+
   list-style: none;
 }
 
 .navbar__link {
-  color: var(--muted);
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.88);
+
   text-decoration: none;
+
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
   text-transform: uppercase;
-  transition: color var(--transition-fast);
+
+  transition: color 0.3s ease;
 }
 
 .navbar__link:hover {
-  color: var(--text);
+  color: #d6ff57;
 }
 
 /* ========================================
-   Navigation CTA Button
+   Hover Underline
    ======================================== */
-.navbar__cta {
-  background: var(--accent);
-  color: var(--bg);
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 11px 24px;
-  border: none;
-  cursor: none;
-  transition: background var(--transition-fast),
-              transform var(--transition-fast);
+
+.navbar__link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 0%;
+
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: #d6ff57;
+
+  transition: width 0.3s ease;
 }
 
-.navbar__cta:hover {
-  background: #d4ff70;
-  transform: translateY(-1px);
+.navbar__link:hover::after {
+  width: 100%;
 }
 
 /* ========================================
-   Mobile Navigation
+   Mobile
    ======================================== */
+
 @media (max-width: 900px) {
   .navbar {
-    padding: 20px var(--container-padding);
-  }
+    width: calc(100% - 20px);
 
-  .navbar.scrolled {
-    padding: 14px var(--container-padding);
+    padding: 14px 18px;
   }
 
   .navbar__links {
     display: none;
+  }
+
+  .logo-main {
+    font-size: 38px;
+  }
+
+  .logo-sub {
+    font-size: 8px;
+
+    letter-spacing: 0.16em;
+  }
+
+  .navbar__logo-image {
+    width: 56px;
+
+    height: 56px;
   }
 }
